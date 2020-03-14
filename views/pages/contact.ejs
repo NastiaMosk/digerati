@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Contact us - digerati.</title>
+        <% include ../partials/head %>
+        <link href="css/form.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+       <% include ../partials/header %>
+
+        <div class="cover-top" id="cover-t"></div>
+
+        <div class="contact-bg"></div>
+        <div class="page-content" id="content">
+            <img src="img/contact-img.jpg">
+            <div class="page-contain">
+                <div class="contact-decr">
+                    <h1 class="bigH">contact us.</h1>
+                    <p class="faded">Contact us if you got any questions, suggestions, feedbacks</p>
+                    <table>
+                        <tr class="faded">
+                            <th>Adress</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                        <tr>
+                            <td>1748 Rust Hills</td>
+                             <td>ourEmail@mail.com</td>
+                            <td>7050-180-5221</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" name="contactForm">
+                        <h2>write us a message.</h2>
+                       <div class="input-field">
+                            <input type="text" name="name" id="name" required>
+
+                            <div class="label-box">
+                                <label for="name">Full Name</label>
+                            </div>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="text" name="email" id="email" required>
+
+                            <div class="label-box">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+
+                        <div class="input-field">
+                            <div class="label-box">
+                                <label for="message">Your message</label>
+                            </div>
+                            <textarea name="message" id="message" required cols="22" rows="6" maxlength="220"></textarea>
+                        </div>
+
+                        <input type="submit" name="sendMess" value="Send message" class="contact-btn" id="submitium">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="contact-bg"></div>
+
+        <div class="cover-bottom" id="cover-b"></div>
+
+       <% include ../partials/footer %>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script>
+        
+           $('form').on('submit', (evt) => {
+               evt.preventDefault();
+               
+               const subject = $('#name').val().trim();
+               const email = $('#email').val().trim();
+               const text = $('#message').val().trim();
+               
+               const data = {
+                   email,
+                   subject,
+                   text
+               };
+                              
+               $.post('/email', data, function() {
+                    console.log('Server recieved our data')
+                    console.log(data);
+                    submitium.value = "Thank you"
+                    submitium.style.cssText = "background-color: #fff; color: #cab39b; transition: background-color 2s, color 0.5s;"
+                   $( 'form' ).each(function(){this.reset();});
+                   setTimeout(function(){
+                       submitium.value = "Send message"
+                       submitium.style.cssText = "background-color: #cab39b; color: #fff; transition: background-color 3s;color 2s"
+                   }, 4000);
+               })
+           })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,235 @@
+
+body {
+    grid-template-areas:
+    "cover cover cover cover cover cover cover cover"
+    ". features features features features features features ."
+    ". testi testi testi testi testi testi ."
+    ". about about about about about about ."
+    "footer footer footer footer footer footer footer footer";
+    grid-template-rows: repeat(5, min-content );
+}
+#cover {
+    grid-area: cover;
+}
+#features {
+    grid-area: features;
+}
+#testimonials {
+    grid-area: testi;
+}
+#about {
+    grid-area: about;
+}
+
+ .cover  {
+    position: relative;
+    background-image: url("/img/home/cover-3.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    color: #fff;
+}
+.cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    text-align: center;
+}
+.cover-text h1 {
+    font-size: calc(55px + .5vw);
+}
+.cover-text p {
+    font-size: calc(25px + .5vw);
+    max-width: 80%;
+    margin: 0 auto;
+}
+.feature-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    color: #cab39b;
+    background-color: #fbf7f4;
+}
+.feature-content div  {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.feature-content h1 {
+    font-size: 1.8em;
+    line-height: 1.8em;
+}
+.feature-content p {
+    max-width: 80%;
+}
+.feature-content > img {
+    width: 100%;
+    height: auto;
+}
+.feature-icon {
+    width: 15%;
+    height: auto;
+}
+.features-bg {
+    background: #fbf7f4;
+}
+.testimonials-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.4fr;
+    background-color: #cab39b;
+    color:#fff;
+    width: 100%;
+    height: auto;
+}
+.testimonials-content h1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 3;
+}
+.testimonials-content blockquote {
+    position: relative;
+    padding: 10px 50px;
+    height: 80%;
+    box-sizing: border-box;
+}
+.testimonials-content  blockquote:first-of-type {
+    border-right: 1px solid #eff0f2;
+}
+.testimonials-content blockquote::before {
+    position: absolute;
+    content: " ";
+    top: 5px;
+    left: 30px;
+    width: 25px;
+    height: 16px;
+    background: url(/img/home/format-quote-close.svg) no-repeat 100% 100%;
+    transform: scale(-1.8);
+}
+.testimonials-content blockquote::after {
+    position: absolute;
+    content: " ";
+    top: 120px;
+    right: 40px;
+    width: 25px;
+    height: 16px;
+    background: url(/img/home/format-quote-close.svg) no-repeat 100% 100%;
+    transform: scale(1.8);
+}
+.testimonials-content blockquote p{
+    text-indent: 40px;
+}
+.testimonials-bg {
+    background-color: #cab39b;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #5c626b;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+}
+.about-about {
+    height: auto;
+    width: 100%;
+}
+.about-about p {
+    margin: 5.3% 10%;
+    font-size: calc(11px + .5vw);
+}
+.about-content > img {
+    width: 100%;
+    height: auto;
+}
+.about-bg  {
+    background-color: #5c626b;
+}
+
+/* media-query */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        grid-template-areas:
+        "cover cover cover cover cover cover"
+        " features features features features features features"
+        " testi testi testi testi testi testi "
+        " about about about about about about "
+        "footer footer footer footer footer footer";
+        grid-template-rows: repeat(5, min-content );
+    }
+    .cover {
+        height: 400px;
+    }
+    .cover-text {
+        width: 100%;
+    }
+    .testimonials-content blockquote::before {
+        transform: scale(-1.5);
+    }
+    .testimonials-content blockquote::after {
+        transform: scale(1.5);
+        top: 100px;
+
+    }
+ }
+ @media all and (max-width: 767px ) {
+     body {
+        grid-template-areas:
+        "cover cover"
+        "features features"
+        "testi testi"
+        "about about"
+        "footer footer";
+        grid-template-rows: repeat(5, min-content );
+    }
+     .cover {
+         height: 400px;
+     }
+     .cover-text {
+        background-color: rgba(0,0,0,0.5);
+        width: 100%;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+     .cover-text h1{
+        font-size: 3.3em;
+     }
+     .cover-text p{
+        font-size: 1.3em;
+     }
+    .feature-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-auto-flow: column;
+        font-size: calc(12px + .5vw)
+    }
+
+    .testimonials-content blockquote {
+        padding: 20px 30px;
+        margin: auto;
+        width: 90%;
+        height: 200px;
+    }
+    .testimonials-content blockquote:first-of-type {
+    border-bottom: 1px solid #eff0f2;
+    border-right: none;
+    }
+    .testimonials-content {
+        display: inline;
+    }
+
+    .about-content{
+        display: inline;
+    }
+}
+
+
+

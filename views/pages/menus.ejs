@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Menus - digerati.</title>
+        <% include ../partials/head %>
+        <link href="css/menus.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+       <% include ../partials/header %>
+
+        <div class="cover-top" id="cover-t"></div>
+
+        <div class="menus-bg"></div>
+        <div class="page-content" id="content">
+            <h1>menus.</h1>
+            <nav class="menuList" id="menuList">
+                <li id="drinks" class="menu-list-item currentItem">Drinks</li>
+                <li id="sanwiches" class="menu-list-item">Sanwiches</li>
+                <li id="breads" class="menu-list-item">Breads</li>
+                <li id="piestarts" class="menu-list-item">Pies&Tarts</li>
+                <li id="cakes" class="menu-list-item">Cakes</li>
+                <li id="desserts" class="menu-list-item">Desserts</li>
+
+            </nav>
+            <div class="menu-page">
+                <div class="assortment">
+                        <div class="menu-item">
+                            <h1>Tea.</h1>
+                            <p>Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui</p>
+                            <span>39</span>
+                            <img src="/img/menus/tea.jpg" height="270px">
+                        </div><div class="menu-item">
+                            <h1>Juice.</h1>
+                            <p>Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui</p>
+                            <span>59</span>
+                            <img src="/img/menus/juice.jpg" height="270px">
+                        </div><div class="menu-item">
+                            <h1>Coffee.</h1>
+                            <p>Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui,</p>
+                            <span>85</span>
+                            <img src="/img/menus/coffee.jpg" height="270px">
+                        </div><div class="menu-item">
+                            <h1>Fruit Fresh.</h1>
+                            <p>Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui</p>
+                            <span>74</span>
+                            <img src="/img/menus/fresh.jpg" height="270px">
+                        </div><div class="menu-item">
+                            <h1>Water.</h1>
+                            <p>Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui</p>
+                            <span>44</span>
+                            <img src="/img/menus/water.jpg" height="270px">
+                        </div><div class="menu-item">
+                            <h1>Milkshake.</h1>
+                            <p>Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui</p>
+                            <span>97</span>
+                            <img src="/img/menus/milkshake.jpg" height="270px">
+                        </div></div>
+                <div class="sideBar" id="side">
+                    <div class="specials" id="speci">
+                        <h1>Specials</h1>
+                        <div class="menu-item special">
+                            <h1>Sakura jelly.</h1>
+                            <p>Sed rhoncus, tortor sed eleifend tristique, mauris molestie elit, et lacinia quam nec dui</p>
+                            <span>85</span>
+                            <img src="/img/menus/sakura-special.jpg" height="270px" class="special-img">
+                        </div>
+                        <div class="menu-item special" >
+                            <h1>Mojito.</h1>
+                            <p>Sed rhoncus, tortor sed eleifend tristique, mauris molestie elit, et lacinia quam nec </p>
+                            <span>85</span>
+                            <img src="/img/menus/mojito-special.jpg" class="special-img">
+                        </div>
+                    </div>
+
+                    <blockquote class="quotes" id="quot">
+                        <h1 id="quotText">“Vegetables are a must on a diet. I suggest carrot cake, zucchini bread and pumpkin pie.” </h1>
+                        <cite id="quotAuthor" >Jim Davis</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="menus-bg"></div>
+
+        <div class="cover-bottom" id="cover-b"></div>
+
+       <% include ../partials/footer %>
+
+       <template id="menu-item-template">
+            <div class="menu-item">
+                <h1></h1>
+                <p></p>
+                <span></span>
+                <img src="" height="270px">
+            </div>
+        </template>
+    </body>
+</html>

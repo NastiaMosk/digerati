@@ -1,0 +1,185 @@
+body {
+    grid-template-areas:
+    "cover-t cover-t cover-t cover-t cover-t cover-t cover-t cover-t"
+    ". content content content content content content ."
+    "cover-b cover-b cover-b cover-b cover-b cover-b cover-b cover-b"
+    "footer footer footer footer footer footer footer footer";
+    grid-template-rows: repeat(4, min-content );
+    background-color: #929292;
+
+}
+
+#cover-t {
+    grid-area: cover-t;
+}
+#cover-b {
+    grid-area: cover-b;
+}
+#content {
+    grid-area: content;
+}
+.cover-top {
+    background-image: url("/img/form-cover.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 230px;
+    color: #aaaaaa;
+    opacity: 0.5;
+}
+.cover-bottom {
+    background-image: url("/img/form-cover.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 160px;
+    color: #aaaaaa;
+    opacity: 0.5;
+}
+.page-content {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    color: #fff;
+    background-color: #cab39b;
+    width: 100%;
+    height: 100%;
+    font-size: calc(8px + .5vw);
+
+}
+.page-content img {
+    width: 100%;
+}
+.page-contain {
+    display: grid;
+    grid-template-rows: 35% 60%;
+    padding: 7%;
+}
+.faded {
+    color: #e9dfd6;
+    font-size: 1.1em;
+
+}
+.page-contain h1{
+    margin-left: inherit;
+    margin-bottom: 3%;
+    font-size: 2.8em;
+}
+.page-contain h2{
+    font-size: 2em;
+
+}
+.page-contain table{
+    margin-top: 5%;
+    text-align: left;
+    width: 100%;
+}
+.page-contain th {
+    font-weight: 400;
+}
+.page-contain td {
+    font-size: calc(8px + .5vw);
+}
+
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  transition: background-color 5000s ease-in-out 0s;
+    -webkit-font-family: inherit;
+}
+
+.contact-form .input-field {
+    margin:5%;
+}
+.contact-form input,
+.contact-form textarea
+{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #887d72;
+    background: none;
+    color:#fff;
+    outline: none;
+    resize: none;
+    padding:7px;
+    font-size: calc(13px + .5vw);
+    font-family: "Raleway", sans-serif;
+}
+.contact-form .label-box{
+    position: relative;
+    width: 100%;
+}
+.contact-form label {
+    width: 100%;
+    font-size: calc(13px + .5vw);
+    pointer-events: none;
+    position: absolute;
+    top: calc(-1*(25px + .5vw));
+    transition-duration: 0.2s;
+    padding-left: 4px;
+}
+.contact-form label[for="message"] {
+    top: 7px;
+}
+.contact-form textarea::-webkit-scrollbar {
+    visibility: hidden;
+}
+.contact-form .contact-btn {
+    border: 2px solid #fff;
+    width: 50%;
+    margin: 5%;
+    margin-left: 50%;
+    font-family: inherit;
+    padding: 3%;
+    height: auto;
+}
+.contact-bg {
+    background: #cab39b;
+}
+
+
+
+
+@media (min-width: 680px) and (max-width: 1023px) {
+    body {
+        grid-template-areas:
+        "cover-t cover-t cover-t cover-t cover-t cover-t"
+    "content content content content content content"
+    "cover-b cover-b cover-b cover-b cover-b cover-b"
+    "footer footer footer footer footer footer";
+        grid-template-rows: repeat(5, min-content );
+    }
+}
+
+ @media all and (max-width: 679px ) {
+    body {
+        grid-template-areas:
+        "cover-t cover-t cover-t cover-t cover-t cover-t"
+    "content content content content content content"
+    "cover-b cover-b cover-b cover-b cover-b cover-b"
+    "footer footer footer footer footer footer";
+        grid-template-rows: repeat(5, max-content );
+    }
+    .page-content {
+        grid-template-rows:1fr;
+        grid-template-columns: 1fr;
+    }
+     .page-content img {
+         display: none;
+     }
+     .page-contain {
+         grid-template-rows: min-content min-content;
+     }
+     .page-contain table {
+         margin-bottom: 15%;
+     }
+     .cover-top {
+         height: 230px;
+     }
+     .cover-bottom {
+         height: 160px;
+     }
+     .faded {
+         font-size: 1.4em;
+     }
+}

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>digerati.</title>
+        <% include ../partials/head %>
+        <link href="css/styler.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+       <% include ../partials/header %>
+
+        <div class="cover" id="cover"><div class="cover-text">
+            <h1 >eat and drink, </h1>
+            <p id="typedtext">and enjoy all your labour under the sun all the days of your life</p>
+            </div>
+        </div>
+
+        <div class="feature-content" id="features">
+            <div>
+                <img src="img/home/leaf.svg" alt="leaf" class="feature-icon">
+                <h1>organic.</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <img src="img/home/feat1.jpg" alt="" >
+            <div>
+                <img src="img/home/shield-half-full.svg" alt="shield" class="feature-icon">
+                <h1>safe.</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <img src="img/home/feat2.jpg" alt="" >
+            <div>
+                <img src="img/home/thumb-up-outline.svg" alt="like" class="feature-icon">
+                <h1>qualified.</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <img src="img/home/feat3.jpg" alt="" >
+        </div>
+
+        <div class="features-bg bg "></div>
+        <div class="features-bg bg"></div>
+
+        <div class="testimonials-content" id="testimonials">
+            <h1 class="bigH">testimonials.</h1>
+
+            <blockquote>
+                <p>	    Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. </p>
+                <br>
+                <cite>Someone, 20.04.2018</cite>
+            </blockquote>
+
+            <blockquote>
+                <p>	Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. </p>
+                <br>
+                <cite>Somebody, Kyiw</cite>
+            </blockquote>
+        </div>
+
+        <div class="testimonials-bg bg"></div>
+        <div class="testimonials-bg bg"></div>
+
+        <div class="about-content" id="about">
+            <div class="about-about">
+                <h1 class="bigH">about us.</h1>
+                <p>	We are so cool, blah-blah-blah. Consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. </p>
+            </div>
+            <img src="img/home/about.jpg" alt="About us" >
+        </div>
+
+        <div class="about-bg bg"></div>
+        <div class="about-bg bg"></div>
+
+       <% include ../partials/footer %>
+       <script>
+                // set up text to print, each item in array is new line
+        var aText = new Array(
+        "and enjoy all your labour under the sun all the days of your life", 
+        );
+        var iSpeed = 100; // time delay of print out
+        var iIndex = 0; // start printing array at this posision
+        var iArrLength = aText[0].length; // the length of the text array
+        var iScrollAt = 20; // start scrolling up at this many lines
+
+        var iTextPos = 0; // initialise text position
+        var sContents = ''; // initialise contents variable
+        var iRow; // initialise current row
+
+        function typewriter()
+        {
+         sContents =  ' ';
+         iRow = Math.max(0, iIndex-iScrollAt);
+         var destination = document.getElementById("typedtext");
+
+         while ( iRow < iIndex ) {
+          sContents += aText[iRow++] + '<br />';
+         }
+         destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "|";
+         if ( iTextPos++ == iArrLength ) {
+          iTextPos = 0;
+          iIndex++;
+          if ( iIndex != aText.length ) {
+           iArrLength = aText[iIndex].length;
+           setTimeout("typewriter()", 500);
+          }
+         } else {
+          setTimeout("typewriter()", iSpeed);
+         }
+        }
+        typewriter();
+        </script>
+    </body>
+</html>
